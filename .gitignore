@@ -1,0 +1,7 @@
+/target
+.idea
+*.iml
+*~
+/dependency-reduced-pom.xml
+/examples/src/main/java/net/autobuilder/examples/MyAuto.java
+
