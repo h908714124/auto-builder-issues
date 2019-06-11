@@ -10,22 +10,21 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <auto-value.version>1.6.5</auto-value.version>
   </properties>
 
   <dependencies>
 
     <dependency>
       <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value</artifactId>
-      <version>1.4.1</version>
-      <scope>provided</scope>
+      <artifactId>auto-value-annotations</artifactId>
+      <version>${auto-value.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.github.h908714124</groupId>
-      <artifactId>auto-builder</artifactId>
-      <version>1.1</version>
-      <scope>provided</scope>
+      <artifactId>auto-builder-annotations</artifactId>
+      <version>1.0</version>
     </dependency>
 
     <dependency>
@@ -47,10 +46,22 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
+        <version>3.8.1</version>
         <configuration>
           <source>8</source>
           <target>8</target>
+          <annotationProcessorPaths>
+            <dependency>
+              <groupId>com.github.h908714124</groupId>
+              <artifactId>auto-builder</artifactId>
+              <version>2.9.1</version>
+            </dependency>
+            <dependency>
+              <groupId>com.google.auto.value</groupId>
+              <artifactId>auto-value</artifactId>
+              <version>${auto-value.version}</version>
+            </dependency>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
     </plugins>
